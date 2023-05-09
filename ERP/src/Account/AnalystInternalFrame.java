@@ -34,7 +34,7 @@ public class AnalystInternalFrame extends javax.swing.JInternalFrame {
             String firstName, String lastName, String department, 
             boolean isAdmin, boolean isManager, boolean isEngineer, 
             boolean isAnalyst, boolean isTech, String table) {
-        //super("",true,true,true);
+        super("",true,false,true);
         initComponents();
         
         // set user values
