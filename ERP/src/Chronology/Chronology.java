@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * Chronology.java - class for determining the date and time for current and past
@@ -13,40 +15,24 @@ import java.util.Date;
  */
 public class Chronology 
 {
-    DateFormat fmtYMD = new SimpleDateFormat("yyyy-mm-dd");
-    DateFormat fmtDMY = new SimpleDateFormat("dd-mm-yyyy");
-    DateFormat fmtDMY2 = new SimpleDateFormat("mm/dd/yyyy");
-    
-    DateFormat fmtYMD_HM = new SimpleDateFormat("yyyy-mm-dd HH:mm");
-    //DateFormat fmtDMY_HM = new SimpleDateFormat("dd-mm-yyyy HH:mm");
-    //DateFormat fmtDMY2_HM = new SimpleDateFormat("mm/dd/yyyy HH:mm");
-    
-    //DateFormat fmtYMD_HMS = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
-    //DateFormat fmtDMY_HMS = new SimpleDateFormat("dd-mm-yyyy HH:mm:ss");
-    //DateFormat fmtDMY2_HMS = new SimpleDateFormat("mm/dd/yyyy HH:mm:ss");
-    
-    DateFormat fmtHM = new SimpleDateFormat("HH:mm");
-    //DateFormat fmtHMS = new SimpleDateFormat("HH:mm:ss");
-    
-    //DateFormat defaultDateFormat = fmtYMD;
-    //DateFormat defaultDateTimeFormat = fmtYMD_HM;
-    //DateFormat defaultTimeFormat = fmtHM;
-    
     String currentYearDate, currentYear;
     String currentDateTime, currentDate, currentTime;
     String today, yesterday, weekAgo, monthAgo, yearAgo;
     String[] weekDates;
-    //Date date, dateTime, time;
+    
     int monthDays, dayOfWeek, dayOfMonth, dayOfYear, dayOfWeekInMonth;
     int weekOfMonth, weekOfYear;
+    private String[][] calendar;
+    private int[] numDays;
+    private DefaultTableModel calendarModel;
     
     /**
      * Chronology constructor method sets the current and past date and time
      */
     public Chronology()
     {
-        setDateTime();// set date and time
-        setDay();// set day value relative to month and week
+        setDateTime();
+        setDay();
         setWeek();
         setPast();
         
@@ -197,7 +183,96 @@ public class Chronology
         int maxDays = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
         this.monthDays = maxDays;
     }// end setMonthDays method
+    
+    public void setCalendar()
+    {
+        int row = getWeekOfMonth();
+        int column = getDayOfWeek();
+        int week = getWeekOfMonth();
+        int day = getDayOfWeek();
+        int d = getDayOfMonth();
+        
+        //first day of month
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.set(Calendar.DAY_OF_MONTH, cal.getActualMinimum(Calendar.DAY_OF_MONTH));
+        int firstColumn = cal.get(Calendar.DAY_OF_WEEK);
+        
+        // create new table model with day headers
+        DefaultTableModel model = new DefaultTableModel(new String[] {"Su","M","Tu","W","Th","F","Sa"},0);
+        // get current year and month
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        // set month table
+        setMonth(year,month);
+    }// end setCalendar method
+    
+    /**
+     * setMonth method for setting the month days in a table formatted model
+     * @param year
+     * @param month
+     */
+    private void setMonth(int year, int month) 
+    {
+        // off set calendar cells
+        for (int i = 1; i < 7; ++i) 
+        {
+            for (int j = 0; j < 7; ++j) 
+            {
+                calendar[i][j] = " ";
+            }
+        }
+        // instantiate new GregorianCalendar object
+        GregorianCalendar cal = new GregorianCalendar();
+        // set first day of month
+        cal.set(year, month, 1);
+        // get start day offset plus 7 days for week
+        int offset = cal.get(java.util.GregorianCalendar.DAY_OF_WEEK) - 1;
+        offset += 7;
+        // get days in month
+        int num = daysInMonth(year, month);
+        // apppend days to array
+        for (int i = 0; i < num; ++i) 
+        {
+            calendar[offset / 7][offset % 7] = Integer.toString(i + 1);
+            ++offset;
+        }
+    }// end setMonth method
+    
+    /**
+     * isLeapYear method for determining if the current year is a leap year
+     * @param year current year
+     * @return Boolean is or is not leap year
+     */
+    private boolean isLeapYear(int year) 
+    {
+        // check for leap year
+        if (year % 4 == 0)
+        {
+          return true;
+        }
+        else// is not leap year
+        {
+            return false;
+        }
+    }// end isLeapYear method
 
+    /**
+     * daysInMonth method for counting the days in a month
+     * @param year
+     * @param month
+     * @return int days
+     */
+    private int daysInMonth(int year, int month) 
+    {
+        int days = numDays[month];
+        if (month == 1 && isLeapYear(year))
+        {
+          ++days;
+        }
+        return days;
+    }// end daysInMonth method
+    
     /**
      * getDateTime method returns current date with time
      *
@@ -350,5 +425,15 @@ public class Chronology
     public int getWeekOfYear() {
         return weekOfYear;
     }// end getWeekOfYear method
+    
+    /**
+     * getCalendar method returns the calendar table model
+     * @return calendar month model
+     */
+    public DefaultTableModel getCalendar()
+    {
+        return calendarModel;
+    }// end getCalendar method
+    
 }// end Chronology class
 
