@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import java.awt.Rectangle;
-import java.awt.Toolkit;
 import javax.swing.event.InternalFrameListener;
 
 /**
@@ -484,6 +483,6 @@ public class ERPMainWindow extends javax.swing.JFrame implements Runnable {
                 return;
             }
         }
-    }
+    }// end run method
 
-}
+}// end ERPMainWindow class
