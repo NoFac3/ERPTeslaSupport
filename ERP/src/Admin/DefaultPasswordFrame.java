@@ -165,4 +165,4 @@ public class DefaultPasswordFrame extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtPassword1;
     private javax.swing.JPasswordField txtPassword2;
     // End of variables declaration                   
-}//end DefaultPasswordFrame method
+}//end DefaultPasswordFrame class
