@@ -22,9 +22,10 @@ public class Chronology
     
     int monthDays, dayOfWeek, dayOfMonth, dayOfYear, dayOfWeekInMonth;
     int weekOfMonth, weekOfYear;
-    private String[][] calendar;
-    private int[] numDays;
     private DefaultTableModel calendarModel;
+    String[][] calendar = new String[7][7]; 
+    String[] days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+    int[] numDays = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     
     /**
      * Chronology constructor method sets the current and past date and time
