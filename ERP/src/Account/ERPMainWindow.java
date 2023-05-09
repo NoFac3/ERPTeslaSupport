@@ -430,7 +430,6 @@ public class ERPMainWindow extends javax.swing.JFrame implements Runnable {
             Rectangle r = lp.setSizePosition(frameName,type,a);
             intFrame.setSize(r.getSize());
             intFrame.setLocation(r.getLocation());
-            a = lp.getA();
         }
     }// end resizeFrames method
     
