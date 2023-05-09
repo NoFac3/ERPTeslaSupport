@@ -1,9 +1,3 @@
-/**
- * Cypher.java - class for encrypting and decrypting values
- * CSIS 643 - d01
- * @author Kore Woody
- */
-
 package Cypher;
 
 import java.io.File;
@@ -18,6 +12,11 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.Scanner;
 
+/**
+ * Cypher.java - class for encrypting and decrypting values
+ * CSIS 643 - d01
+ * @author Kore Woody
+ */
 public class Cypher 
 {
     protected String encID;
