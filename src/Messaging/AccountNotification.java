@@ -11,7 +11,7 @@ import javafx.geometry.Pos;
 /**
  * AcountNotification - 
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class AccountNotification 
 {
