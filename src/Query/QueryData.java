@@ -7,7 +7,7 @@ import java.util.Map;
  * QueryData.java - class for querying vehicle inventory and incident databases. 
  * Used by analyst profile and populating details in tickets
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class QueryData extends Query
 {
