@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  * TicketFrame.java - frame for displaying, creating, and updating ticket 
  * information. 
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class TicketFrame extends JFrame {
 
