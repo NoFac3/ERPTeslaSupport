@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * TicketLockFrame.java - frame for setting the lock status of tickets based on
  * number entered
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class TicketLockFrame extends javax.swing.JFrame {
 
