@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  * QueryTicketLog.java - class for querying total counts for the database tables
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class QueryTicketLog extends Query
 {
