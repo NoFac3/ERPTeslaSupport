@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  * QueryAccount.java - class used to create database queries for accounts 
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class QueryAccount extends Query
 {
