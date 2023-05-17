@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * MessageFrame.java - JFrame class called by MessagesInternalFrame for displaying 
  * internal messages and request system
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class MessageFrame extends JFrame {
 
