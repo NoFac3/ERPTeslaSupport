@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * QueryGuide.java - class that queries database for Error code guides
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 
 public class QueryGuide extends Query
