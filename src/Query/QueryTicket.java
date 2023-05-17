@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  * QueryTicket.java - class for querying database for support tickets
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class QueryTicket extends Query{
 
