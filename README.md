@@ -1,11 +1,4 @@
 # Implementation Assignment: ERPTeslaSupport
-Kore N. Woody
-Liberty University
-Software Design
-CSIS 643 – D01
-Professor Mary Cecil
-April 07, 2023
-Link: https://github.com/NoFac3/ERPTeslaSupport/tree/main
 
  
 # Implementation Assignment
