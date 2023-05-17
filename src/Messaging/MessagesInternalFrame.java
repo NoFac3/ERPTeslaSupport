@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
  * MessagesInternalFrame.java - JInternalFrame that handles user access and 
  * viewing of their respective inbox.
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class MessagesInternalFrame extends javax.swing.JInternalFrame {
 
