@@ -7,7 +7,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  * MessageSearchFrame.java - frame used by MessageFrame for search fro user IDs
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class MessageSearchFrame extends JFrame {
 
