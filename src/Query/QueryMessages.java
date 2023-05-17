@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
  * QueryMessages.java - class used by the message frames to query and update 
  * the messaging database table
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class QueryMessages extends Query
 {
