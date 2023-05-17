@@ -6,7 +6,7 @@ package Ticket;
 
 /**
  *
- * @author consp
+ * @author NoFac3
  */
 public class CustomerDialog extends javax.swing.JDialog {
 
