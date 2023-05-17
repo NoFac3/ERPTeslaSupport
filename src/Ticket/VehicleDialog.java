@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  * VehicleDialog.java - dialog for querying vehicle information to add to tickets
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
 */
 public class VehicleDialog extends JDialog {
 
