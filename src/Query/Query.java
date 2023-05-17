@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * Query.java - Parent class for all query classes. Facilitates database, 
  * encryption, and time queries.
  * CSIS 643 - D01
- * @author Kore Woody
+ * @author NoFac3
  */
 public class Query 
 {
