@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  * CalendarInternalFrame.java - frame used by all user account types. displays
  * the calendar month and indicated the current date CSIS 643 - D01
  *
- * @author Kore Woody
+ * @author NoFac3
  */
 public class CalendarInternalFrame extends JInternalFrame {
 
